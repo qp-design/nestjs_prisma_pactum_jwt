@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  dev-db:
+    image: postgres
+    restart: always
+    ports:
+      - "80:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - freecodecamp
+  test-db:
+    image: postgres
+    restart: always
+    ports:
+      - "81:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - freecodecamp
+networks:
+  freecodecamp:
+
